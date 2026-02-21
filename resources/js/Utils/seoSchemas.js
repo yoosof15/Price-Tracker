@@ -1,4 +1,3 @@
-<script setup>
 export const generateProductSchema = (product) => {
     return {
         '@context': 'https://schema.org',
@@ -71,4 +70,3 @@ export const generateLocalBusinessSchema = () => {
         }
     };
 };
-</script>
