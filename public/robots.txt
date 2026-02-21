@@ -1,0 +1,47 @@
+# نرخ‌نامه قیمت - Robots.txt
+# SEO Optimization for Price Tracker
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Disallow admin and private paths
+Disallow: /admin/
+Disallow: /user/
+Disallow: /login/
+Disallow: /api/
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /*.env
+Disallow: /*.json
+Disallow: /config/
+
+# Allow crawling of static assets
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /storage/products/
+
+# Crawl delay and request rate
+Crawl-delay: 1
+Request-rate: 10/1m
+
+# Sitemap location
+Sitemap: https://your-domain.com/sitemap.xml
+
+# Google specific
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing specific  
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Allow: /

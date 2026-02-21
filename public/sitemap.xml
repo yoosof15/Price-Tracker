@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    
+    <!-- Homepage - High Priority, Daily Update -->
+    <url>
+        <loc>https://your-domain.com/</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Price List Page -->
+    <url>
+        <loc>https://your-domain.com/prices</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>hourly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- Product Pages (examples - add dynamically in production) -->
+    <url>
+        <loc>https://your-domain.com/products/cucumber</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://your-domain.com/storage/products/cucumber.svg</image:loc>
+            <image:title>خیار</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://your-domain.com/products/tomato</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://your-domain.com/storage/products/tomato.svg</image:loc>
+            <image:title>گوجه‌فرنگی</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://your-domain.com/products/bell-pepper</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://your-domain.com/storage/products/pepper.svg</image:loc>
+            <image:title>فلفل دلمه‌ای</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://your-domain.com/products/onion</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://your-domain.com/storage/products/onion.svg</image:loc>
+            <image:title>پیاز</image:title>
+        </image:image>
+    </url>
+
+</urlset>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#7d00fc;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#e63946;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#06d6a0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Content Area -->
+  <rect x="50" y="50" width="1100" height="530" rx="20" fill="white" opacity="0.95"/>
+  
+  <!-- Logo -->
+  <circle cx="600" cy="150" r="70" fill="#7d00fc" opacity="0.1"/>
+  <text x="600" y="160" font-family="Arial, sans-serif" font-size="70" font-weight="bold" text-anchor="middle" fill="#7d00fc">₹</text>
+  
+  <!-- Main Title -->
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="60" font-weight="bold" text-anchor="middle" fill="#1f2937">
+    نرخ‌نامه قیمت
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="350" font-family="Arial, sans-serif" font-size="32" text-anchor="middle" fill="#666">
+    قیمت روز میوه و سبزیجات
+  </text>
+  
+  <!-- Feature Tags -->
+  <rect x="200" y="400" width="180" height="60" rx="10" fill="#7d00fc" opacity="0.1" stroke="#7d00fc" stroke-width="2"/>
+  <text x="290" y="435" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#7d00fc">
+    بروزرسانی لحظه‌ای
+  </text>
+  
+  <rect x="510" y="400" width="180" height="60" rx="10" fill="#e63946" opacity="0.1" stroke="#e63946" stroke-width="2"/>
+  <text x="600" y="435" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#e63946">
+    نمودار قیمت
+  </text>
+  
+  <rect x="820" y="400" width="180" height="60" rx="10" fill="#06d6a0" opacity="0.1" stroke="#06d6a0" stroke-width="2"/>
+  <text x="910" y="435" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#06d6a0">
+    بازارهای مختلف
+  </text>
+  
+  <!-- Footer -->
+  <text x="600" y="530" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" fill="#999">
+    www.your-domain.com
+  </text>
+</svg>

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    background: #eef0f4;
+    font-family: "Vazirmatn", sans-serif;
+}
+
+.apexcharts-tooltip, .apexcharts-legend-text, .apexcharts-yaxis-label, .apexcharts-xaxis-label, .apexcharts-title-text, .apexcharts-text {
+    font-family: 'Vazirmatn', sans-serif !important;
+}
+
+
+.lg1 { background: #ff4b2b; }
+.lg2 { background: #7d00fc; }
+.lg3 { background: #71d957; }
