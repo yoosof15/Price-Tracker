@@ -1,9 +1,12 @@
 <script setup>
-import { ref, onMounted, onUnmounted, watch } from 'vue';
-import { Head } from '@inertiajs/vue3';
+import { ref, onMounted, onUnmounted, watch, computed } from 'vue';
+import { Head, usePage, Link } from '@inertiajs/vue3';
 import axios from 'axios';
 import ChartModal from '@/Components/ChartModal.vue';
 import SeoHead from '@/Components/SeoHead.vue';
+
+const page = usePage();
+const user = computed(() => page.props.auth?.user);
 
 // --- State Variables for Price List ---
 const prices = ref([]);
@@ -264,11 +267,38 @@ const getChangeArrow = (change) => {
     />
 
     <!-- هدر ... (بدون تغییر) -->
-    <header class="bg-gradient-to-br from-primaryPurple via-primaryRed to-primaryGreen p-4 sm:p-6 md:p-10 text-center text-white rounded-b-3xl shadow-xl">
+    <header class="bg-gradient-to-br from-primaryPurple via-primaryRed to-primaryGreen p-4 sm:p-6 md:p-10 text-center text-white rounded-b-3xl shadow-xl relative">
                 <!-- <--- لوگوی سفارشی -->
         <div class="absolute top-2 right-2 sm:top-4 sm:right-4 md:top-6 md:right-6 bg-white p-1.5 sm:p-2 md:p-3 rounded-lg sm:rounded-xl shadow-2xl flex items-center justify-center transform hover:scale-105 transition-transform">
             <img src="/images/my-logo2.png" alt="لوگوی من" class="h-10 sm:h-16 md:h-24 w-auto"> <!-- <--- ارتفاع کوچک‌تر برای موبایل -->
         </div>
+
+        <!-- دکمه ورود/حساب کاربری -->
+        <div class="absolute top-2 left-2 sm:top-4 sm:left-4 md:top-6 md:left-6">
+            <Link 
+                v-if="!user"
+                :href="route('login')"
+                class="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 bg-white/20 hover:bg-white/30 text-white text-xs sm:text-sm rounded-lg sm:rounded-xl transition-colors duration-300 backdrop-blur-sm border border-white/30"
+            >
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"></path>
+                </svg>
+                <span class="hidden sm:inline">ورود</span>
+                <span class="sm:hidden">ورود</span>
+            </Link>
+            <Link 
+                v-else
+                :href="route('dashboard')"
+                class="inline-flex items-center gap-1 sm:gap-2 px-2 sm:px-4 py-1.5 sm:py-2 bg-white/20 hover:bg-white/30 text-white text-xs sm:text-sm rounded-lg sm:rounded-xl transition-colors duration-300 backdrop-blur-sm border border-white/30"
+            >
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                </svg>
+                <span class="hidden sm:inline">{{ user.name }}</span>
+                <span class="sm:hidden">حساب</span>
+            </Link>
+        </div>
+
       <div class="flex items-center justify-center text-xs sm:text-base md:text-lg mb-3 sm:mb-2 mt-16 sm:mt-0">
             <!-- <--- این div جدید برای پس‌زمینه اضافه شد -->
             <div class="bg-white/20 backdrop-blur-sm px-2 sm:px-4 py-1 sm:py-2 rounded-full flex items-center gap-1 sm:gap-2">
