@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\PermissionController;
+use App\Http\Controllers\Admin\PriceManagerController;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\Product;
@@ -35,6 +36,26 @@ Route::get('/admin/api/locations', [PriceController::class, 'getLocations']);
 Route::get('/admin/api/products', [PriceController::class, 'getProducts'])->name('admin.api.products');
 Route::get('/api/prices/history/{product}', [PriceController::class, 'history']);
 Route::get('/api/locations', [PriceController::class, 'getPublicLocations']);
+
+
+/*
+|--------------------------------------------------------------------------
+| \Set Prices Routes (دسترسی برای همه)
+|--------------------------------------------------------------------------
+*/
+// مسیر اصلی صفحه قیمت‌ها (بدون auth)
+Route::get('/prices', [PriceManagerController::class, 'index'])->name('prices.index');
+Route::get('/prices/create', [PriceManagerController::class, 'create'])->name('prices.create'); // اختیاری
+
+Route::get('/api/prices/list', [PriceManagerController::class, 'getPricesList']);
+
+// مسیرهای API برای عملیات
+Route::get('/api/prices/products', [PriceManagerController::class, 'getProducts']);
+Route::get('/api/prices/locations', [PriceManagerController::class, 'getLocations']);
+Route::post('/api/prices/store-or-update', [PriceManagerController::class, 'storeOrUpdate']);
+Route::delete('/api/prices/{price}', [PriceManagerController::class, 'destroy']);
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -115,6 +136,19 @@ Route::middleware('auth')->group(function () {
         Route::put('/users/{user}/role', [UserController::class, 'updateRole'])->name('admin.users.update-role');
         Route::get('/users/{user}', [UserController::class, 'show'])->name('admin.users.show');
         Route::put('/users/{user}', [UserController::class, 'update'])->name('admin.users.update');
+
+
+
+
+    });
+
+
+    Route::middleware(['auth'])->name('admin.')->prefix('admin')->group(function () {
+        // ... مسیرهای دیگر ...
+
+        // صفحه مدیریت قیمت‌ها (لیست / ویرایش / حذف)
+        Route::get('/price-manager', [PriceManagerController::class, 'index'])->name('price_manager');
+        Route::get('/price-manager/prices', [PriceManagerController::class, 'paginatedPrices'])->name('price_manager.prices');
     });
 
 

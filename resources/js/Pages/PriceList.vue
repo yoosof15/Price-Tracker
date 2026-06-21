@@ -41,10 +41,6 @@ async function fetchData() {
         const pricesResponse = await axios.get('/api/prices/today');
         const allLocationsResponse = await axios.get('/api/locations');
 
-        console.log('--- PriceList fetchData Debugging ---'); // <--- log
-        console.log('Raw pricesResponse.data:', JSON.parse(JSON.stringify(pricesResponse.data))); // <--- log
-        console.log('Raw allLocationsResponse.data:', JSON.parse(JSON.stringify(allLocationsResponse.data)));
-
         prices.value = pricesResponse.data;
         allAvailableLocations.value = allLocationsResponse.data; // <--- استفاده از allAvailableLocations ref
         

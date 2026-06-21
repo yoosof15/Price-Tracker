@@ -56,6 +56,9 @@ const logout = () => {
                                 <NavLink v-if="canViewPrices" :href="route('admin.prices')" :active="route().current('admin.prices')">
                                     ثبت قیمت‌ها
                                 </NavLink>
+                                <NavLink v-if="canViewPrices" :href="route('admin.price_manager')" :active="route().current('admin.price_manager')">
+                                    مدیریت قیمت‌ها
+                                </NavLink>
                                 <NavLink v-if="canViewProductsMenu" :href="route('admin.products.index')" :active="route().current('admin.products.index')">
                                     مدیریت محصولات
                                 </NavLink>
@@ -145,6 +148,9 @@ const logout = () => {
                         </ResponsiveNavLink>
                         <ResponsiveNavLink v-if="canViewPrices" :href="route('admin.prices')" :active="route().current('admin.prices')">
                             ثبت قیمت‌ها
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink v-if="canViewPrices" :href="route('admin.price_manager')" :active="route().current('admin.price_manager')">
+                            مدیریت قیمت‌ها
                         </ResponsiveNavLink>
                         <ResponsiveNavLink v-if="canViewProductsMenu" :href="route('admin.products.index')" :active="route().current('admin.products.index')">
                             مدیریت محصولات
